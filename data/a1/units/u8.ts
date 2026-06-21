@@ -1,0 +1,178 @@
+import { Unit } from '@/app/types';
+import { a1Grammar } from '../grammar';
+import { a1Vocabulary } from '../vocabulary';
+
+export const u8: Unit = {
+  id: 'a1-u8',
+  levelId: 'A1',
+  unitNumber: 8,
+  title: { de: 'Freizeit und Hobbys', en: 'Free Time and Hobbies', sq: 'Koha e Lirë dhe Hobi' },
+  description: { de: 'Was machst du in deiner Freizeit?', en: 'What do you do in your free time?', sq: 'Çfarë bën në kohën e lirë?' },
+  emoji: '🎮',
+  grammarTips: [a1Grammar[6]],
+  vocabularyList: a1Vocabulary.filter(w => w.topic === 'daily_routine'),
+  lessons: [
+    {
+      id: 'a1-u8-l1',
+      unitId: 'a1-u8',
+      title: { de: 'Hobbys und Aktivitäten', en: 'Hobbies and Activities', sq: 'Hobi dhe Aktivitete' },
+      description: { de: 'lesen, Sport treiben, Musik hören...', en: 'reading, doing sports, listening to music...', sq: 'lexoj, bëj sport, dëgjoj muzikë...' },
+      grammarFocus: ['verb-conjugation', 'gern'],
+      vocabularyFocus: ['daily_routine'],
+      exercises: [
+        {
+          id: 'a1-u8-l1-e1', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'lesen', translation: 'to read', translationLang: 'en' },
+            { de: 'schwimmen', translation: 'to swim', translationLang: 'en' },
+            { de: 'kochen', translation: 'to cook', translationLang: 'en' },
+            { de: 'reisen', translation: 'to travel', translationLang: 'en' },
+          ],
+        },
+        {
+          id: 'a1-u8-l1-e2', type: 'multipleChoice', level: 'A1', xpReward: 10,
+          question: { de: 'Ich lese gern Bücher. Was bedeutet "gern"?', en: 'I like reading books. What does "gern" mean here?', sq: 'Unë lexoj me dëshirë libra. Çfarë do të thotë "gern" këtu?' },
+          options: ['I like to (with pleasure)', 'often', 'always', 'sometimes'],
+          correctIndex: 0,
+          explanation: { en: '"gern" + verb = to like doing something. Ich lese gern = I like to read. Ich koche gern = I like cooking.', sq: '"gern" + folje = të bësh diçka me dëshirë. Ich lese gern = Unë dua të lexoj. Ich koche gern = Unë dua të gatuaj.' },
+        },
+        {
+          id: 'a1-u8-l1-e3', type: 'fillBlank', level: 'A1', xpReward: 10,
+          sentence: { de: 'Ich höre _____ Musik. (like to)', en: 'I like listening to music.', sq: 'Unë dëgjoj me dëshirë muzikë.' },
+          blanks: ['gern'],
+          options: ['gern', 'gut', 'viel', 'nicht'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u8-l1-e4', type: 'translate', level: 'A1', xpReward: 10,
+          prompt: { de: '', en: 'What do you like to do in your free time?', sq: 'Çfarë të pëlqen të bësh në kohën e lirë?' },
+          correctAnswer: 'Was machst du gern in deiner Freizeit?',
+          targetLang: 'de',
+          wordBank: ['Was', 'machst', 'du', 'gern', 'in', 'deiner', 'Freizeit', 'tust'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u8-l1-e5', type: 'wordOrder', level: 'A1', xpReward: 15,
+          words: ['Ich', 'spiele', 'gern', 'Gitarre', 'und', 'tanze', '.'],
+          correctSentence: 'Ich spiele gern Gitarre und tanze.',
+          translation: { de: 'Ich spiele gern Gitarre und tanze.', en: 'I like playing guitar and dancing.', sq: 'Unë luaj me dëshirë kitarë dhe vallëzoj.' },
+        },
+        {
+          id: 'a1-u8-l1-e6', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'In meiner Freizeit spiele ich Fußball und lese gern Krimis.',
+          question: { de: 'Was sind die Hobbys der Person?', en: 'What are the person\'s hobbies?', sq: 'Cilat janë hobitë e personit?' },
+          options: ['Fußball und Krimis lesen', 'Tennis und Musik', 'Schwimmen und Kochen', 'Reisen und Tanzen'],
+          correctIndex: 0,
+        },
+      ],
+    },
+    {
+      id: 'a1-u8-l2',
+      unitId: 'a1-u8',
+      title: { de: 'Können und Wollen', en: 'Can and Want', sq: '"Mund" dhe "Dua"' },
+      description: { de: 'Ich kann schwimmen. Ich will tanzen.', en: 'I can swim. I want to dance.', sq: 'Unë mund të notoj. Unë dua të vallëzoj.' },
+      grammarFocus: ['modal-verbs', 'infinitive'],
+      vocabularyFocus: ['daily_routine'],
+      exercises: [
+        {
+          id: 'a1-u8-l2-e1', type: 'fillBlank', level: 'A1', xpReward: 10,
+          sentence: { de: 'Ich _____ gut Klavier spielen. (can)', en: 'I can play piano well.', sq: 'Unë mund të luaj piano mirë.' },
+          blanks: ['kann'],
+          options: ['kann', 'will', 'muss', 'darf'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u8-l2-e2', type: 'wordOrder', level: 'A1', xpReward: 15,
+          words: ['Kannst', 'du', 'Deutsch', 'sprechen', '?'],
+          correctSentence: 'Kannst du Deutsch sprechen?',
+          translation: { de: 'Kannst du Deutsch sprechen?', en: 'Can you speak German?', sq: 'A mund të flassh gjermanisht?' },
+        },
+        {
+          id: 'a1-u8-l2-e3', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'ich kann', translation: 'I can', translationLang: 'en' },
+            { de: 'ich will', translation: 'I want to', translationLang: 'en' },
+            { de: 'ich muss', translation: 'I must', translationLang: 'en' },
+            { de: 'ich möchte', translation: 'I would like to', translationLang: 'en' },
+          ],
+        },
+        {
+          id: 'a1-u8-l2-e4', type: 'multipleChoice', level: 'A1', xpReward: 10,
+          question: { de: 'Ich will nach Berlin _____. (to travel)', en: 'I want to travel to Berlin.', sq: 'Unë dua të udhëtoj në Berlin.' },
+          options: ['reisen', 'reise', 'gereist', 'reisend'],
+          correctIndex: 0,
+          explanation: { en: 'Modal verbs send the main verb as INFINITIVE to the end: ich will...reisen (travel). No -e, -st, -t endings!', sq: 'Foljet modale dërgojnë foljen kryesore si INFINITIV në fund: ich will...reisen. Pa mbaresa -e, -st, -t!' },
+        },
+        {
+          id: 'a1-u8-l2-e5', type: 'translate', level: 'A1', xpReward: 10,
+          prompt: { de: '', en: 'She wants to learn German.', sq: 'Ajo dëshiron të mësojë gjermanisht.' },
+          correctAnswer: 'Sie will Deutsch lernen.',
+          targetLang: 'de',
+          wordBank: ['Sie', 'will', 'Deutsch', 'lernen', 'kann', 'sprechen'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u8-l2-e6', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'Ich kann nicht gut kochen, aber ich will es lernen.',
+          question: { de: 'Was will die Person lernen?', en: 'What does the person want to learn?', sq: 'Çfarë dëshiron të mësojë personi?' },
+          options: ['kochen', 'tanzen', 'schwimmen', 'singen'],
+          correctIndex: 0,
+        },
+      ],
+    },
+    {
+      id: 'a1-u8-l3',
+      unitId: 'a1-u8',
+      title: { de: 'Unit-Test: Freizeit', en: 'Unit Test: Leisure', sq: 'Testi i Njësisë: Koha e Lirë' },
+      description: { de: 'Hobbys und Modalverben testen!', en: 'Test hobbies and modal verbs!', sq: 'Testo hobitë dhe foljet modale!' },
+      grammarFocus: ['modal-verbs', 'gern', 'verb-conjugation'],
+      vocabularyFocus: ['daily_routine'],
+      exercises: [
+        {
+          id: 'a1-u8-l3-e1', type: 'translate', level: 'A1', xpReward: 15,
+          prompt: { de: '', en: 'I can swim but I don\'t like it.', sq: 'Unë mund të not por nuk më pëlqen.' },
+          correctAnswer: 'Ich kann schwimmen, aber ich schwimme nicht gern.',
+          targetLang: 'de',
+          wordBank: ['Ich', 'kann', 'schwimmen', 'aber', 'nicht', 'gern', 'schwimme', 'will'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u8-l3-e2', type: 'wordOrder', level: 'A1', xpReward: 15,
+          words: ['Wir', 'möchten', 'heute', 'Abend', 'ins', 'Kino', 'gehen', '.'],
+          correctSentence: 'Wir möchten heute Abend ins Kino gehen.',
+          translation: { de: 'Wir möchten heute Abend ins Kino gehen.', en: 'We would like to go to the cinema this evening.', sq: 'Ne do të donim të shkojmë në kinema sonte.' },
+        },
+        {
+          id: 'a1-u8-l3-e3', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'Fußball spielen', translation: 'të luash futboll', translationLang: 'sq' },
+            { de: 'Musik hören', translation: 'të dëgjosh muzikë', translationLang: 'sq' },
+            { de: 'Bücher lesen', translation: 'të lexosh libra', translationLang: 'sq' },
+            { de: 'ins Kino gehen', translation: 'të shkosh në kinema', translationLang: 'sq' },
+          ],
+        },
+        {
+          id: 'a1-u8-l3-e4', type: 'fillBlank', level: 'A1', xpReward: 15,
+          sentence: { de: 'Du _____ gut Gitarre spielen! (can)', en: 'You can play guitar well!', sq: 'Ti mund të luash mirë kitarë!' },
+          blanks: ['kannst'],
+          options: ['kannst', 'können', 'kann', 'wollt'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u8-l3-e5', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'Am Wochenende möchte ich wandern gehen. Ich wandere sehr gern.',
+          question: { de: 'Was möchte die Person am Wochenende machen?', en: 'What does the person want to do on the weekend?', sq: 'Çfarë dëshiron personi të bëjë të fundavën?' },
+          options: ['wandern gehen', 'schwimmen', 'ins Kino gehen', 'lesen'],
+          correctIndex: 0,
+        },
+        {
+          id: 'a1-u8-l3-e6', type: 'multipleChoice', level: 'A1', xpReward: 15,
+          question: { de: 'Was bedeutet "Ich spiele nicht gern Tennis"?', en: 'What does "Ich spiele nicht gern Tennis" mean?', sq: 'Çfarë do të thotë "Ich spiele nicht gern Tennis"?' },
+          options: ['I don\'t like playing tennis.', 'I can\'t play tennis.', 'I never play tennis.', 'Tennis is not good.'],
+          correctIndex: 0,
+          explanation: { en: '"nicht gern" = don\'t like. Ich spiele nicht gern Tennis = I don\'t like playing tennis.', sq: '"nicht gern" = nuk dua / nuk më pëlqen. Ich spiele nicht gern Tennis = Nuk më pëlqen të luaj tenis.' },
+        },
+      ],
+    },
+  ],
+};

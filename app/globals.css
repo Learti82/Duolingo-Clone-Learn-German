@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --green: #58CC02;
+  --green-light: #D7FFB8;
+  --red: #FF4B4B;
+  --red-light: #FFDFE0;
+  --blue: #1CB0F6;
+  --gold: #FFC800;
+  --purple: #CE82FF;
+  --gray-dark: #3C3C3C;
+  --bg: #F7F7F7;
+  --der-color: #1CB0F6;
+  --die-color: #FF4B4B;
+  --das-color: #58CC02;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--gray-dark);
+  font-family: 'Nunito', 'DIN Round Pro', sans-serif;
+}
+
+.btn-check {
+  background-color: var(--green);
+  color: white;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  border-bottom: 4px solid #46A302;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.1s;
+}
+
+.btn-check:active {
+  border-bottom: 1px solid #46A302;
+  transform: translateY(3px);
+}
+
+.btn-check:disabled {
+  background-color: #e5e5e5;
+  color: #afafaf;
+  border-bottom-color: #c8c8c8;
+  cursor: default;
+}
+
+.btn-check.correct {
+  background-color: var(--green);
+}
+
+.btn-check.wrong {
+  background-color: var(--red);
+  border-bottom-color: #cc3333;
+}
+
+.heart { color: #FF4B4B; }
+.gem { color: #1CB0F6; }
+.streak { color: #FFC800; }

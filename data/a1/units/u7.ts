@@ -1,0 +1,178 @@
+import { Unit } from '@/app/types';
+import { a1Grammar } from '../grammar';
+import { a1Vocabulary } from '../vocabulary';
+
+export const u7: Unit = {
+  id: 'a1-u7',
+  levelId: 'A1',
+  unitNumber: 7,
+  title: { de: 'Berufe und Arbeit', en: 'Jobs and Work', sq: 'Profesionet dhe Puna' },
+  description: { de: 'Was bist du von Beruf?', en: 'What do you do for a living?', sq: 'Çfarë profesioni ke?' },
+  emoji: '💼',
+  grammarTips: [a1Grammar[0], a1Grammar[9]],
+  vocabularyList: a1Vocabulary.filter(w => w.topic === 'jobs'),
+  lessons: [
+    {
+      id: 'a1-u7-l1',
+      unitId: 'a1-u7',
+      title: { de: 'Berufe', en: 'Professions', sq: 'Profesionet' },
+      description: { de: 'Arzt, Lehrer, Ingenieur...', en: 'Doctor, teacher, engineer...', sq: 'Mjek, mësues, inxhinier...' },
+      grammarFocus: ['sein', 'professions'],
+      vocabularyFocus: ['jobs'],
+      exercises: [
+        {
+          id: 'a1-u7-l1-e1', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'der Arzt / die Ärztin', translation: 'doctor', translationLang: 'en' },
+            { de: 'der Lehrer / die Lehrerin', translation: 'teacher', translationLang: 'en' },
+            { de: 'der Ingenieur / die Ingenieurin', translation: 'engineer', translationLang: 'en' },
+            { de: 'der Polizist / die Polizistin', translation: 'police officer', translationLang: 'en' },
+          ],
+        },
+        {
+          id: 'a1-u7-l1-e2', type: 'multipleChoice', level: 'A1', xpReward: 10,
+          question: { de: 'Er ist Arzt. (Kein Artikel!) Warum?', en: 'He is a doctor. (No article!) Why?', sq: 'Ai është mjek. (Pa nyje!) Pse?' },
+          options: ['Berufe haben kein Artikel nach "sein"', 'Arzt ist maskulin', 'Es gibt kein Regel', 'Nur im Plural'],
+          correctIndex: 0,
+          explanation: { en: 'In German, professions after "sein" have NO article: Ich bin Arzt (not "ein Arzt"). Exception: with adjective: Ich bin ein guter Arzt.', sq: 'Në gjermanisht, profesionet pas "sein" nuk kanë nyje: Ich bin Arzt (jo "ein Arzt"). Përjashtim: me mbiemrë: Ich bin ein guter Arzt.' },
+        },
+        {
+          id: 'a1-u7-l1-e3', type: 'fillBlank', level: 'A1', xpReward: 10,
+          sentence: { de: 'Sie ist _____ . (teacher - female)', en: 'She is a teacher.', sq: 'Ajo është mësuese.' },
+          blanks: ['Lehrerin'],
+          options: ['Lehrerin', 'Lehrer', 'Lehrers', 'Lehrerinnen'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u7-l1-e4', type: 'translate', level: 'A1', xpReward: 10,
+          prompt: { de: '', en: 'What do you do? (What is your profession?)', sq: 'Çfarë bën? (Çfarë profesioni ke?)' },
+          correctAnswer: 'Was bist du von Beruf?',
+          targetLang: 'de',
+          wordBank: ['Was', 'bist', 'du', 'von', 'Beruf', 'machst', 'arbeitest'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u7-l1-e5', type: 'wordOrder', level: 'A1', xpReward: 15,
+          words: ['Ich', 'bin', 'Student', 'und', 'arbeite', 'als', 'Kellner', '.'],
+          correctSentence: 'Ich bin Student und arbeite als Kellner.',
+          translation: { de: 'Ich bin Student und arbeite als Kellner.', en: 'I am a student and work as a waiter.', sq: 'Unë jam student dhe punoj si kamerier.' },
+        },
+        {
+          id: 'a1-u7-l1-e6', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'Meine Mutter ist Ärztin und mein Vater ist Ingenieur.',
+          question: { de: 'Was ist die Mutter von Beruf?', en: 'What is the mother\'s profession?', sq: 'Çfarë profesioni ka nëna?' },
+          options: ['Ärztin', 'Ingenieurin', 'Lehrerin', 'Köchin'],
+          correctIndex: 0,
+        },
+      ],
+    },
+    {
+      id: 'a1-u7-l2',
+      unitId: 'a1-u7',
+      title: { de: 'Wo arbeitest du?', en: 'Where do you work?', sq: 'Ku punon?' },
+      description: { de: 'Im Büro, im Krankenhaus, in der Schule...', en: 'In the office, hospital, school...', sq: 'Në zyrë, spital, shkollë...' },
+      grammarFocus: ['prepositions', 'dative'],
+      vocabularyFocus: ['jobs'],
+      exercises: [
+        {
+          id: 'a1-u7-l2-e1', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'das Büro', translation: 'office', translationLang: 'en' },
+            { de: 'das Krankenhaus', translation: 'hospital', translationLang: 'en' },
+            { de: 'die Schule', translation: 'school', translationLang: 'en' },
+            { de: 'das Restaurant', translation: 'restaurant', translationLang: 'en' },
+          ],
+        },
+        {
+          id: 'a1-u7-l2-e2', type: 'fillBlank', level: 'A1', xpReward: 10,
+          sentence: { de: 'Der Arzt arbeitet _____ Krankenhaus.', en: 'The doctor works in the hospital.', sq: 'Mjeku punon në spital.' },
+          blanks: ['im'],
+          options: ['im', 'in', 'an', 'bei'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u7-l2-e3', type: 'translate', level: 'A1', xpReward: 10,
+          prompt: { de: '', en: 'She works in a school.', sq: 'Ajo punon në shkollë.' },
+          correctAnswer: 'Sie arbeitet in einer Schule.',
+          targetLang: 'de',
+          wordBank: ['Sie', 'arbeitet', 'in', 'einer', 'Schule', 'einem', 'Büro'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u7-l2-e4', type: 'wordOrder', level: 'A1', xpReward: 15,
+          words: ['Wo', 'arbeitest', 'du', '?'],
+          correctSentence: 'Wo arbeitest du?',
+          translation: { de: 'Wo arbeitest du?', en: 'Where do you work?', sq: 'Ku punon ti?' },
+        },
+        {
+          id: 'a1-u7-l2-e5', type: 'multipleChoice', level: 'A1', xpReward: 10,
+          question: { de: 'Der Koch arbeitet _____ . (in a restaurant)', en: 'The cook works in a restaurant.', sq: 'Kuzhinieri punon në restorant.' },
+          options: ['in einem Restaurant', 'im Schule', 'an der Büro', 'bei die Küche'],
+          correctIndex: 0,
+          explanation: { en: '"in einem Restaurant" = in a restaurant. "ein" → "einem" (dative, neuter). Restaurants = das Restaurant.', sq: '"in einem Restaurant" = në restorant. "ein" → "einem" (dativë, asnjanës). Restaurants = das Restaurant.' },
+        },
+        {
+          id: 'a1-u7-l2-e6', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'Ich bin Lehrerin und arbeite in einer Grundschule in Berlin.',
+          question: { de: 'Wo arbeitet die Frau?', en: 'Where does the woman work?', sq: 'Ku punon gruaja?' },
+          options: ['in einer Grundschule', 'in einem Büro', 'in einem Krankenhaus', 'zu Hause'],
+          correctIndex: 0,
+        },
+      ],
+    },
+    {
+      id: 'a1-u7-l3',
+      unitId: 'a1-u7',
+      title: { de: 'Unit-Test: Berufe', en: 'Unit Test: Professions', sq: 'Testi i Njësisë: Profesionet' },
+      description: { de: 'Berufe und Arbeitsplätze', en: 'Professions and workplaces', sq: 'Profesionet dhe vendet e punës' },
+      grammarFocus: ['sein', 'professions', 'prepositions'],
+      vocabularyFocus: ['jobs'],
+      exercises: [
+        {
+          id: 'a1-u7-l3-e1', type: 'translate', level: 'A1', xpReward: 15,
+          prompt: { de: '', en: 'My father is a doctor and works in a big hospital.', sq: 'Babai im është mjek dhe punon në një spital të madh.' },
+          correctAnswer: 'Mein Vater ist Arzt und arbeitet in einem großen Krankenhaus.',
+          targetLang: 'de',
+          wordBank: ['Mein', 'Vater', 'ist', 'Arzt', 'und', 'arbeitet', 'in', 'einem', 'großen', 'Krankenhaus'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u7-l3-e2', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'der Koch / die Köchin', translation: 'cook / chef', translationLang: 'en' },
+            { de: 'der Anwalt / die Anwältin', translation: 'lawyer', translationLang: 'en' },
+            { de: 'der Mechaniker / die Mechanikerin', translation: 'mechanic', translationLang: 'en' },
+            { de: 'der Journalist / die Journalistin', translation: 'journalist', translationLang: 'en' },
+          ],
+        },
+        {
+          id: 'a1-u7-l3-e3', type: 'fillBlank', level: 'A1', xpReward: 15,
+          sentence: { de: 'Was bist du von _____?', en: 'What is your profession?', sq: 'Çfarë profesioni ke?' },
+          blanks: ['Beruf'],
+          options: ['Beruf', 'Arbeit', 'Job', 'Stelle'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u7-l3-e4', type: 'wordOrder', level: 'A1', xpReward: 15,
+          words: ['Sie', 'ist', 'Ingenieurin', 'und', 'arbeitet', 'bei', 'BMW', '.'],
+          correctSentence: 'Sie ist Ingenieurin und arbeitet bei BMW.',
+          translation: { de: 'Sie ist Ingenieurin und arbeitet bei BMW.', en: 'She is an engineer and works at BMW.', sq: 'Ajo është inxhiniere dhe punon te BMW.' },
+        },
+        {
+          id: 'a1-u7-l3-e5', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'Ich bin Architekt. Ich arbeite in einem Architekturbüro in München.',
+          question: { de: 'In welcher Stadt arbeitet die Person?', en: 'In which city does the person work?', sq: 'Në cilën qytet punon personi?' },
+          options: ['München', 'Berlin', 'Wien', 'Hamburg'],
+          correctIndex: 0,
+        },
+        {
+          id: 'a1-u7-l3-e6', type: 'multipleChoice', level: 'A1', xpReward: 15,
+          question: { de: 'Wie sagt man "nurse" (female) auf Deutsch?', en: 'How do you say "nurse" (female) in German?', sq: 'Si thuhet "infermiere" (femër) në gjermanisht?' },
+          options: ['die Krankenschwester', 'der Krankenpfleger', 'die Ärztin', 'die Sanitäterin'],
+          correctIndex: 0,
+          explanation: { en: 'die Krankenschwester (female nurse), der Krankenpfleger (male nurse). Kranken = sick, Schwester = sister.', sq: 'die Krankenschwester (infermiere femër), der Krankenpfleger (infermier mashkull). Kranken = i sëmurë, Schwester = motrë.' },
+        },
+      ],
+    },
+  ],
+};

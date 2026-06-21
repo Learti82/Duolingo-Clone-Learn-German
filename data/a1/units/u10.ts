@@ -1,0 +1,186 @@
+import { Unit } from '@/app/types';
+import { a1Grammar } from '../grammar';
+import { a1Vocabulary } from '../vocabulary';
+
+export const u10: Unit = {
+  id: 'a1-u10',
+  levelId: 'A1',
+  unitNumber: 10,
+  title: { de: 'Gesundheit und Körper', en: 'Health and Body', sq: 'Shëndeti dhe Trupi' },
+  description: { de: 'Körperteile, Krankheiten und beim Arzt', en: 'Body parts, illnesses and at the doctor', sq: 'Pjesët e trupit, sëmundjet dhe te mjeku' },
+  emoji: '🏥',
+  grammarTips: [a1Grammar[6]],
+  vocabularyList: a1Vocabulary.filter(w => w.topic === 'health_body'),
+  lessons: [
+    {
+      id: 'a1-u10-l1',
+      unitId: 'a1-u10',
+      title: { de: 'Körperteile', en: 'Body Parts', sq: 'Pjesët e Trupit' },
+      description: { de: 'Kopf, Arme, Beine, Hände...', en: 'Head, arms, legs, hands...', sq: 'Koka, krahët, këmbët, duart...' },
+      grammarFocus: ['articles', 'plurals'],
+      vocabularyFocus: ['health_body'],
+      exercises: [
+        {
+          id: 'a1-u10-l1-e1', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'der Kopf', translation: 'head', translationLang: 'en' },
+            { de: 'die Hand', translation: 'hand', translationLang: 'en' },
+            { de: 'das Bein', translation: 'leg', translationLang: 'en' },
+            { de: 'der Bauch', translation: 'stomach/belly', translationLang: 'en' },
+          ],
+        },
+        {
+          id: 'a1-u10-l1-e2', type: 'articleDrill', level: 'A1', xpReward: 15,
+          noun: 'Auge',
+          gender: 'das',
+          plural: 'Augen',
+          translation: { de: 'das Auge', en: 'eye', sq: 'syri' },
+          exampleSentence: { de: 'Ich habe blaue Augen.', en: 'I have blue eyes.', sq: 'Unë kam sy blu.' },
+        },
+        {
+          id: 'a1-u10-l1-e3', type: 'articleDrill', level: 'A1', xpReward: 15,
+          noun: 'Zahn',
+          gender: 'der',
+          plural: 'Zähne',
+          translation: { de: 'der Zahn', en: 'tooth', sq: 'dhëmbi' },
+          exampleSentence: { de: 'Mein Zahn tut weh.', en: 'My tooth hurts.', sq: 'Dhëmbi im dhemb.' },
+        },
+        {
+          id: 'a1-u10-l1-e4', type: 'translate', level: 'A1', xpReward: 10,
+          prompt: { de: '', en: 'My back hurts.', sq: 'Shpina ime dhemb.' },
+          correctAnswer: 'Mein Rücken tut weh.',
+          targetLang: 'de',
+          wordBank: ['Mein', 'Rücken', 'tut', 'weh', 'Kopf', 'schmerzt'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u10-l1-e5', type: 'multipleChoice', level: 'A1', xpReward: 10,
+          question: { de: 'Wie sagt man "I have a headache" auf Deutsch?', en: 'How do you say "I have a headache" in German?', sq: 'Si thuhet "Kam dhimbje koke" në gjermanisht?' },
+          options: ['Ich habe Kopfschmerzen.', 'Mein Kopf ist krank.', 'Ich bin Kopf weh.', 'Der Kopf schmerzt mir.'],
+          correctIndex: 0,
+          explanation: { en: '"Kopfschmerzen" = headache (head-pain). Plural! Also: Bauchschmerzen (stomach ache), Halsschmerzen (sore throat), Zahnschmerzen (toothache).', sq: '"Kopfschmerzen" = dhimbje koke. Shumës! Gjithashtu: Bauchschmerzen (dhimbje barku), Halsschmerzen (dhimbje fyti), Zahnschmerzen (dhimbje dhëmbi).' },
+        },
+        {
+          id: 'a1-u10-l1-e6', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'Ich habe Halsschmerzen und Fieber. Mein Kopf tut auch weh.',
+          question: { de: 'Was hat die Person NICHT?', en: 'What does the person NOT have?', sq: 'Çfarë NUK ka personi?' },
+          options: ['Bauchschmerzen', 'Halsschmerzen', 'Fieber', 'Kopfschmerzen'],
+          correctIndex: 0,
+        },
+      ],
+    },
+    {
+      id: 'a1-u10-l2',
+      unitId: 'a1-u10',
+      title: { de: 'Beim Arzt', en: 'At the Doctor', sq: 'Te Mjeku' },
+      description: { de: 'Was fehlt Ihnen? Ich bin krank.', en: 'What\'s wrong? I am sick.', sq: 'Çfarë keni? Jam i sëmurë.' },
+      grammarFocus: ['modal-verbs', 'müssen'],
+      vocabularyFocus: ['health_body'],
+      exercises: [
+        {
+          id: 'a1-u10-l2-e1', type: 'multipleChoice', level: 'A1', xpReward: 10,
+          question: { de: 'Was fragt der Arzt?', en: 'What does the doctor ask?', sq: 'Çfarë pyet mjeku?' },
+          options: ['Was fehlt Ihnen?', 'Was essen Sie?', 'Wo wohnen Sie?', 'Wie alt sind Sie?'],
+          correctIndex: 0,
+          explanation: { en: '"Was fehlt Ihnen?" = What\'s wrong with you? (formal). "Fehlen" = to be missing/lacking. Literally: "What is missing to you?"', sq: '"Was fehlt Ihnen?" = Çfarë keni? (formale). "Fehlen" = të mungojë. Fjalë për fjalë: "Çfarë ju mungon?"' },
+        },
+        {
+          id: 'a1-u10-l2-e2', type: 'fillBlank', level: 'A1', xpReward: 10,
+          sentence: { de: 'Ich _____ zum Arzt gehen. (must)', en: 'I must go to the doctor.', sq: 'Unë duhet të shkoj te mjeku.' },
+          blanks: ['muss'],
+          options: ['muss', 'soll', 'will', 'kann'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u10-l2-e3', type: 'wordOrder', level: 'A1', xpReward: 15,
+          words: ['Ich', 'bin', 'krank', 'und', 'brauche', 'Medikamente', '.'],
+          correctSentence: 'Ich bin krank und brauche Medikamente.',
+          translation: { de: 'Ich bin krank und brauche Medikamente.', en: 'I am sick and need medicine.', sq: 'Unë jam i sëmurë dhe kam nevojë për ilaçe.' },
+        },
+        {
+          id: 'a1-u10-l2-e4', type: 'translate', level: 'A1', xpReward: 10,
+          prompt: { de: '', en: 'You must rest and drink a lot of water.', sq: 'Duhet të pushoni dhe të pini shumë ujë.' },
+          correctAnswer: 'Sie müssen sich ausruhen und viel Wasser trinken.',
+          targetLang: 'de',
+          wordBank: ['Sie', 'müssen', 'sich', 'ausruhen', 'und', 'viel', 'Wasser', 'trinken'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u10-l2-e5', type: 'matchPairs', level: 'A1', xpReward: 15,
+          pairs: [
+            { de: 'das Rezept', translation: 'prescription', translationLang: 'en' },
+            { de: 'das Fieber', translation: 'fever', translationLang: 'en' },
+            { de: 'die Erkältung', translation: 'cold', translationLang: 'en' },
+            { de: 'die Tablette', translation: 'tablet/pill', translationLang: 'en' },
+          ],
+        },
+        {
+          id: 'a1-u10-l2-e6', type: 'listening', level: 'A1', xpReward: 15,
+          audioText: 'Guten Tag, Doktor. Ich habe starke Bauchschmerzen seit gestern.',
+          question: { de: 'Seit wann hat die Person Bauchschmerzen?', en: 'Since when does the person have stomach pain?', sq: 'Que kur ka personi dhimbje barku?' },
+          options: ['seit gestern', 'seit heute', 'seit einer Woche', 'seit zwei Tagen'],
+          correctIndex: 0,
+        },
+      ],
+    },
+    {
+      id: 'a1-u10-l3',
+      unitId: 'a1-u10',
+      title: { de: 'A1 Abschlusstest', en: 'A1 Final Test', sq: 'Testi Përfundimtar A1' },
+      description: { de: 'Du hast A1 fast geschafft!', en: 'You\'ve almost completed A1!', sq: 'Pothuajse ke përfunduar A1!' },
+      grammarFocus: ['all-a1-grammar'],
+      vocabularyFocus: ['all-a1-vocabulary'],
+      exercises: [
+        {
+          id: 'a1-u10-l3-e1', type: 'translate', level: 'A1', xpReward: 20,
+          prompt: { de: '', en: 'Hello! My name is Lena. I am 25 years old and I come from Albania. I am a student.', sq: 'Përshëndetje! Unë quhem Lena. Jam 25 vjec dhe vij nga Shqipëria. Jam studente.' },
+          correctAnswer: 'Hallo! Ich heiße Lena. Ich bin fünfundzwanzig Jahre alt und komme aus Albanien. Ich bin Studentin.',
+          targetLang: 'de',
+          wordBank: ['Hallo', 'Ich', 'heiße', 'Lena', 'bin', 'fünfundzwanzig', 'Jahre', 'alt', 'und', 'komme', 'aus', 'Albanien', 'Studentin'],
+          useWordBank: true,
+        },
+        {
+          id: 'a1-u10-l3-e2', type: 'wordOrder', level: 'A1', xpReward: 20,
+          words: ['Meine', 'Mutter', 'ist', 'Ärztin', 'und', 'arbeitet', 'im', 'Krankenhaus', '.'],
+          correctSentence: 'Meine Mutter ist Ärztin und arbeitet im Krankenhaus.',
+          translation: { de: 'Meine Mutter ist Ärztin und arbeitet im Krankenhaus.', en: 'My mother is a doctor and works in the hospital.', sq: 'Nëna ime është mjeke dhe punon në spital.' },
+        },
+        {
+          id: 'a1-u10-l3-e3', type: 'fillBlank', level: 'A1', xpReward: 20,
+          sentence: { de: 'Ich stehe um halb sieben _____ und _____ um acht mit der Arbeit _____. (aufstehen / anfangen)', en: 'I get up at 6:30 and start work at 8.', sq: 'Unë çohem në gjashtë e gjysmë dhe fillon punën në tetë.' },
+          blanks: ['auf', 'fange', 'an'],
+          options: ['auf', 'fange', 'an', 'stehe', 'ein', 'los'],
+          useOptions: true,
+        },
+        {
+          id: 'a1-u10-l3-e4', type: 'matchPairs', level: 'A1', xpReward: 20,
+          pairs: [
+            { de: 'Ich habe Kopfschmerzen.', translation: 'Kam dhimbje koke.', translationLang: 'sq' },
+            { de: 'Ich muss zum Arzt.', translation: 'Duhet të shkoj te mjeku.', translationLang: 'sq' },
+            { de: 'Was fehlt Ihnen?', translation: 'Çfarë keni?', translationLang: 'sq' },
+            { de: 'Gute Besserung!', translation: 'Shërim të shpejtë!', translationLang: 'sq' },
+          ],
+        },
+        {
+          id: 'a1-u10-l3-e5', type: 'listening', level: 'A1', xpReward: 20,
+          audioText: 'Guten Tag! Ich heiße Thomas Müller. Ich bin Architekt und wohne in Wien. Ich komme aus Deutschland, aber ich arbeite seit drei Jahren in Österreich.',
+          question: { de: 'In welchem Land arbeitet Thomas?', en: 'In which country does Thomas work?', sq: 'Në cilën vend punon Thomas?' },
+          options: ['Österreich', 'Deutschland', 'Albanien', 'die Schweiz'],
+          correctIndex: 0,
+        },
+        {
+          id: 'a1-u10-l3-e6', type: 'multipleChoice', level: 'A1', xpReward: 20,
+          question: { de: 'Welche Aussage ist RICHTIG?', en: 'Which statement is CORRECT?', sq: 'Cili pohim është KORREKT?' },
+          options: [
+            'Ich habe keine Zeit. (kein before die Zeit? → keine!)',
+            'Ich habe kein Zeit.',
+            'Ich habe nicht Zeit.',
+            'Ich habe Zeit nicht.'
+          ],
+          correctIndex: 0,
+          explanation: { en: 'die Zeit → keine Zeit. Feminine nouns use "keine". "kein Zeit" is wrong because Zeit is feminine. "nicht Zeit" is not German. "Zeit nicht" is wrong word order.', sq: 'die Zeit → keine Zeit. Emrat femërororë përdorin "keine". "kein Zeit" është gabim sepse Zeit është femëror. "Zeit nicht" është rend i gabuar fjalësh.' },
+        },
+      ],
+    },
+  ],
+};

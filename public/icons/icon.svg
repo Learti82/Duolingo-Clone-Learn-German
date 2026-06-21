@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#58CC02"/>
+  <rect x="60" y="60" width="392" height="130" rx="20" fill="#1f1f1f"/>
+  <rect x="60" y="191" width="392" height="130" rx="0" fill="#DD0000"/>
+  <rect x="60" y="322" width="392" height="130" rx="20" fill="#FFCE00"/>
+  <rect x="60" y="191" width="392" height="10" fill="#1f1f1f" opacity="0.3"/>
+  <rect x="60" y="312" width="392" height="10" fill="#BB0000" opacity="0.3"/>
+  <circle cx="256" cy="256" r="90" fill="white" opacity="0.92"/>
+  <text x="256" y="242" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-size="52" font-weight="900" fill="#58CC02">DE</text>
+  <text x="256" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#46A302">Lerno</text>
+</svg>
